@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users,
-             controllers: {
-               sessions: 'users/sessions'
-               # registrations: 'users/registrations'  # Uncomment if you have custom signup
-             },
-             path: '',
-             path_names: {
-               sign_in: 'login',      # POST /login
-               sign_out: 'logout'     # DELETE /logout
-             }
 
   namespace :api do
     namespace :v1 do
@@ -18,8 +8,8 @@ Rails.application.routes.draw do
       resources :batches, only: [:index, :create]
       resources :enrollment_requests, only: [:create, :update]  # update for approve/deny
       get 'batches/:batch_id/classmates', to: 'student_batches#index'
-      # Add school_admins create if admin needs to create them
-      resources :school_admins, only: [:create]  # Admin creates SchoolAdmin
+      
+      resources :school_admins, only: [:create]
     end
   end
 end

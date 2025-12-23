@@ -1,4 +1,3 @@
-# app/models/enrollment_request.rb
 class EnrollmentRequest < ApplicationRecord
   enum status: { pending: 0, approved: 1, rejected: 2 }
 

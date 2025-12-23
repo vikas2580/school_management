@@ -43,12 +43,8 @@ end
 gem 'jwt'
 gem "devise"
 gem "devise-jwt"
-# gem "pundit"
 gem "jsonapi-serializer"
 gem "rspec-rails"
 gem "factory_bot_rails"
 gem "faker"
 gem "byebug", platforms: %i[ mri windows ]
-
-
-
